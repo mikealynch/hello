@@ -14,4 +14,8 @@ uploaded_file = st.file_uploader("upload a csv file for analysis")
 
 if uploaded_file is not None:
     st.title('lets scan a business card 2')
+    reader = easyocr.Reader(['en', 'es'])
+    result = reader.readtext(uploaded_file)
+    print(result)
+
 
