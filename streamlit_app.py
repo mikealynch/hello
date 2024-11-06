@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader("upload a csv file for analysis")
 
 if uploaded_file is not None:
     reader = easyocr.Reader(['en', 'es'])
-    image = Image.open(uploaded_file)
+    image = Image.open(io.BytesIO(uploaded_file.read()))
     image = image.convert("RGB")
     image_np = np.array(image)
 
