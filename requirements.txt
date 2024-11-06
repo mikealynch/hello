@@ -1,2 +1,2 @@
 easyocr
-pillow
+PIL
