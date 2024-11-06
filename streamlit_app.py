@@ -13,8 +13,9 @@ with header:
 uploaded_file = st.file_uploader("upload a csv file for analysis")
 
 if uploaded_file is not None:
-    image = Image.open(uploaded_file).convert("RGB")
     reader = easyocr.Reader(['en', 'es'])
+    image = Image.open(uploaded_file)
+    image = image.convert("RGB")
     image_np = np.array(image)
 
     result = reader.readtext(image_np)
@@ -22,7 +23,6 @@ if uploaded_file is not None:
         text=detection[1]
         bbox = detection[0]
         st.write(f'Text:{text}')
-
 
 
 
