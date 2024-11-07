@@ -1,3 +1,2 @@
 easyocr
 pillow
-cv2
